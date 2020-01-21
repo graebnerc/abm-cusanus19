@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[onehalfspacing]{setspace}
+\usepackage[top=2.5cm, bottom=2.5cm, right=2.5cm, left=2.5cm]{geometry}
+
+\usepackage{booktabs}
+\begin{document}
+
+\title{Praktische Programmieraufgaben\\Tag 2}
+\date{ }
+\maketitle
+
+\section*{Aufgabenteil 1}
+
+\textit{Bearbeitet diese Aufgaben in einer Zweiergruppe. Nachdem er sie gelöst habt tauscht euren Code mit der Nachbarsgruppe aus und versucht deren Code nachzuvollziehen. Tauscht euch danach über eure jeweiligen Implementierungen aus und gebt euch Feedback, auch bezüglich der Lesbarkeit und Verstänlichkeit eures Codes.}
+
+\begin{enumerate}
+  \item Die Fibonacci-Folge ist definiert als 
+  $$a_n = a_{n-1} + a_{n-2} \quad\quad\quad \textup{ for } n>2 \quad\quad \textup{ with } a_1=1, a_2=1,$$
+  also als $\left\{1, 1, 2, 3, 5, 8, 13, 21, 34, 55\right\}$.
+  Schreibt eine Funktion, welche die $n$-te Fibonacci Zahl berechnet. Für das Argument $9$ sollte also $34$ ausgegeben werden, für $10$ dann $55$, etc.
+  \item Ein klassisches Spiel in der Spieltheorie ist das \textit{Gefangenendilemma}. In diesem Spiel gibt es zwei Spieler, $S_1$ und $S_2$, beide haben die Wahl zwischen zwei Strategie, \texttt{Defektion} oder \texttt{Kooperation}. Der Payoff jedes Spielers, $\Pi_i$, ist abhängig von der eigenen Entscheidung und der Entscheidung des anderen Spielers. Implementieren Sie das Spiel in Python. Ihre Implementierung sollte eine Methode oder Funktion enthalten, der man als Argumente die Strategien der beiden Spieler gibt und die als Output deren jeweiligen Payoffs ausgibt wenn der Payoff nach folgender Tabelle berechnet wird:
+\begin{center}
+	  \begin{tabular}{cccc}
+  \toprule
+  	\textbf{Strategie $S_1$} & \textbf{Strategie $S_1$} & $\Pi_1$ & $\Pi_2$\\
+  	\midrule
+  		\texttt{Kooperation} & \texttt{Kooperation} & 4 & 4 \\
+  		\texttt{Kooperation} & \texttt{Defektion} & 0 & 6\\
+  		\texttt{Defektion} & \texttt{Kooperation} & 6 & 0 \\
+  		\texttt{Defektion} & \texttt{Defektion} & 2 & 2\\
+  		\bottomrule
+  \end{tabular}
+\end{center}
+\end{enumerate}
+
+\newpage
+\section*{Aufgabenteil 2}
+\textit{Bearbeitet diese Aufgabe in Teams von ca. 4 Leuten. Versucht eure Lösung möglichst klar darzustellen und so zu kommentieren, dass für andere klar wird wie das Modell funktioniert. Nach ca. 45 Minuten tauscht ihr den Code mit einer anderen Gruppe. Versucht deren Code nachzuvollziehen und zu verstehen, was das zugrundeliegende Problem war und wie es gelöst wurde. Überlegt euch konstruktives Feedback, sowohl zur Implementierung als auch der Art der Darstellung und Verständlichkeit des Codes.}
+
+\begin{enumerate}
+	\item[3. ] Betrachten Sie folgenden hypothetisches Zielsystem:
+	\begin{itemize}
+		\item Es gibt ein Ökosystem mit Hasen und Katzen.
+		\item Die Hasenpopulation wächst jeden Zeitschritt um 10\%.
+		\item Die Katzen fressen Hasen. 
+		\item Pro Katze wird pro 2000 Hasen ein Hase pro Katze gefressen.
+		\item Die Katzenpopulation wächst pro gefressenem Hasen um 10\%.
+		\item Beide Tierarten werden zudem von Autos bedroht: mit einer Wahrscheinlichkeit von 5\% wird jedes Tier von einem Auto überfahren
+		\item Schreiben Sie ein Python Programm das dieses Ökosystem simuliert. Dabei muss es sich nicht notwendigerweise um ein agentenbasiertes Modell handeln.
+		\item Die Beziehungen sind in der folgenden Tabelle zusammengefasst:
+		\end{itemize}
+	\end{enumerate}
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+& \textbf{Hasen} & \textbf{Katzen} &\\
+\midrule
+Variable & $H_t$ & $K_t$ \\
+Hasenwachstum & $0.1$ & & \\
+Interaktion & $-0.0005H_tK_t$ & $0.1 \times 0.0005H_tK_t$\\
+Autos & $-0.05R_t$ & $-0.05K_t$ \\
+Anfangspopulation & $400$ & $50$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\newpage
+\section*{Aufgabenteil 3}
+\textit{Die folgende Aufgabe sollte innerhalb eurer Gruppe bearbeitet werden. Nach ca. 45 Minuten entwickeln wir im Plenum eine gemeinsame Lösung.}
+
+\begin{enumerate}
+	\item[4.] Implementiert das Spiel Schere-Stein-Papier als agentenbasiertes Modell in Python. Die Spieler sollten ihre eigene Klasse bekommen. Am Ende sollte es eine Klasse \texttt{Simulation} und eine Klasse Klasse \texttt{Agent} mit den jeweils notwendigen Methoden geben. Falls zeitlich möglich sollte die Klasse \texttt{Simulation} auch über eine Methode zur Visualisierung der Ergebnisse erhalten.  
+\end{enumerate}
+
+\end{document}

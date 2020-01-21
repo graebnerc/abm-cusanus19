@@ -1,0 +1,149 @@
+\documentclass[25pt,a4paper]{article}
+\usepackage[pdftex,dvipsnames]{color}
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{geometry}
+\usepackage[display]{texpower}
+\usepackage{amsmath, graphicx,amsfonts}
+%\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{multicol,multirow}
+\usepackage{multirow,colortbl,hhline}
+\usepackage{epstopdf}
+\usepackage{hyperref}
+\usepackage{listings}
+
+\definecolor{lgrey}{rgb}{0.9,0.9,0.9}
+
+\geometry{headsep=3ex,hscale=0.9}
+\parindent=0.2in
+\textwidth=6.2in
+\textheight=9.2in
+\oddsidemargin=0.1in
+\evensidemargin=0.2in
+\headsep=0.2cm
+\pagestyle{headings}
+
+\emergencystretch=4cm
+
+\begin{document}
+\setlength{\emergencystretch}{0.5cm}
+\pagestyle{empty}
+\newcommand{\thegroup}{3}
+\newcommand{\ifcasewrapper}[1]
+{\ifcase#1\relax\or 
+    \newcommand{\theothergroup}{2} %1
+\or 
+    \newcommand{\theothergroup}{1} %2
+\or 
+    \newcommand{\theothergroup}{4} %3
+\or 
+    \newcommand{\theothergroup}{3} %4
+\fi
+}
+\ifcasewrapper{\thegroup}
+\section*{Complexity Economics: Problem Set Lab 1}
+
+\newcounter{counter1}
+
+\begin{enumerate}
+  \item \label{prob:2} Write a python script to compute the sum of all integer numbers between $0$ and $100$ that are not evenly (without remainder) divisible by either $4$ or $5$. That is, the numbers $$\left\{1, 2, 3, 6, 7, 9, 11, 13, 14, 17, 18, ...\right\}.$$ %3000
+  \item Consider the code in problem \ref{prob:2} again and rewrite the computation as a function such that the intervals (from $0$ to $100$ in problem \ref{prob:2}) can be passed as arguments. Use this function to compute the sums of all integers not divisible by $4$ or $5$ in the following intervals $\left[100, 300\right]$, $\left[100, 300\right]$, $\left[10000, 20000\right]$. %24000, 2400000, 90000000  
+  \item \label{prob:4} Consider the Fibonacci series, defined as 
+  $$a_n = a_{n-1} + a_{n-2} \quad\quad\quad \textup{ for } n>2 \quad\quad \textup{ with } a_1=1, a_2=1,$$
+  thus $\left\{1, 1, 2, 3, 5, 8, 13, 21, 34, 55\right\}$.
+  Write a python function to compute the n'th Fibonacci number. E.g, the function called with argument $9$ should return $34$; with argument $10$, it should return $55$ etc.
+  \item \label{prob:5} Use the function from problem \ref{prob:4} to compute the 40th Fibonacci number. %102334155 
+%  \item \label{prob:6} 
+\setcounter{counter1}{\value{enumi}}
+\end{enumerate}
+
+$$$$
+$$$$
+$$$$
+
+
+\begin{enumerate}
+\setcounter{enumi}{\value{counter1}}
+  \item \label{prob:1} Consider the following code listings. In each code listing there is a mistake. Correct the mistakes.
+\setcounter{counter1}{\value{enumi}}
+\end{enumerate}
+
+\small
+\begin{lstlisting}[language=Python,frame=single,numbers=left,title=Script 0]
+"""Sum integers from 1 to 10"""
+result = 0
+for i in range(10)
+    result += i
+\end{lstlisting}
+\normalsize
+
+\small
+\begin{lstlisting}[language=Python,frame=single,numbers=left,title=Script 1]
+"""Sum integers from 1 to 10"""
+result = 0
+i = 1
+while i <= 10
+    result += i
+\end{lstlisting}
+\normalsize
+
+\newpage
+
+\small
+\begin{lstlisting}[language=Python,frame=single,numbers=left,title=Script 2]
+"""Function to compute relation of two arguments a and b"""
+def rel(a, b):
+    return a / b
+
+a = "2"
+b = 20
+result = rel(a, b)  
+\end{lstlisting}
+\normalsize
+
+\small
+\begin{lstlisting}[language=Python,frame=single,numbers=left,title=Script 3]
+"""Function to compute factorial of integer b"""
+def factorial(result, a):
+    if a > 1:
+        result = factorial(result, a-1)
+    result *= a
+    return result
+
+b = 20
+result = factorial(b)  
+\end{lstlisting}
+\normalsize
+
+\small
+\begin{lstlisting}[language=Python,frame=single,numbers=left,title=Script 4]
+"""Function to compute factorial of integer b"""
+def factorial(result, a):
+    if a > 1:
+        result = factorial(result, a-1)
+    result *= a
+  
+b = 20
+result = factorial(1, b)  
+\end{lstlisting}
+\normalsize
+
+\small
+\begin{lstlisting}[language=Python,frame=single,numbers=left,title=Script 5]
+"""Function to compute factorial of integer b"""
+def factorial(result, a):
+    while a > 1:
+        result = factorial(result, a-1)
+    result *= a
+    return result
+
+b = 20
+result = factorial(1, b)  
+\end{lstlisting}
+\normalsize
+
+
+
+\end{document}
