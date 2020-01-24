@@ -1,4 +1,4 @@
-import agent as agent
+import agent
 import numpy as np
 
 
@@ -68,7 +68,7 @@ class Model:
         self.time = 0
         self.subscripts_t0 = [0]
         self.subscripts_t1 = [0]
-        
+
         assert neighborhood_str in ["ring", "full"], "No correct neighborhood \
         structure specified. Currently allowed: 'full' or 'ring', but not {}"\
         .format(neighborhood_str)

@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Agent():
+class Agent:
     """Chooses a technology, depending on own preferences and nb of users.
     
     Attributes
