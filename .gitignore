@@ -23,3 +23,6 @@ __pycache__/
 # C extensions
 *.so
 notebooks/.ipynb_checkpoints
+
+# Visual Studio files
+.vscode
