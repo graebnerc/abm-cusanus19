@@ -1,4 +1,6 @@
-# eine einfache version für dieselbe übung
+"""
+Eine sehr direkte und einfache Lösung von Michele.
+"""
 
 def gef(s1, s2):
     return {'Kooperation': {'Kooperation': (4, 4), 'Defektion': (0, 6)},
